@@ -60,7 +60,7 @@ function MessageForm() {
                     <>
                         <div className="alert alert-info conversation-info">
                             <div>
-                                Your conversation with {privateMemberMsg.name} <img src={privateMemberMsg.picture} className="conversation-profile-pic" />
+                                Your conversation with {privateMemberMsg.name} <img alt="" src={privateMemberMsg.picture} className="conversation-profile-pic" />
                             </div>
                         </div>
                     </>
@@ -75,7 +75,7 @@ function MessageForm() {
                                 <div className={sender?.email == user?.email ? "outgoing-message" : "incoming-message"} key={msgIdx}>
                                     <div className="message-inner">
                                         <div className="d-flex align-items-center mb-1">
-                                            <img src={sender.picture} style={{ width: 35, height: 35, objectFit: "cover", borderRadius: "50%", marginRight: 10 }} />
+                                            <img src={sender.picture} style={{ width: 35, height: 35, objectFit: "cover", borderRadius: "50%", marginRight: 10 }} alt="" />
                                             <p className="message-sender">{sender._id == user?._id ? "You" : sender.name}</p>
                                         </div>
                                         <p className="message-content">{content}</p>

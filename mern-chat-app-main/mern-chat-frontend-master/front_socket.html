@@ -107,7 +107,7 @@
         var msg = response.msg;
         var time = response.time;
         var from_name = socket.id;
-        var class_name = response.from == from_name ? "msg_right" : "msg_left";
+        var class_name = response.from === from_name ? "msg_right" : "msg_left";
         var msg_html = `<div class='message ${class_name} mt-2'><span>${msg}</span><p class='timestamp'>${time}</p></div>`;
         $('.msg_area').append(msg_html);
         scroll_to_bottom()
@@ -118,7 +118,7 @@
     }
 
     $("body").on('keyup', '#msg', function(e){
-        if (e.keyCode == 13 && !e.shiftKey) {
+        if (e.keyCode === 13 && !e.shiftKey) {
             send_message();
             return false;
         }
@@ -155,7 +155,7 @@
 
     $(function(){
         var from_name = socket;
-        if(from_name == '' || from_name == undefined){
+        if(from_name === '' || from_name == undefined){
             while (true) {
                 var from_name = prompt("Please enter your name");
                 from_name = from_name.trim();
